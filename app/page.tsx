@@ -11,11 +11,11 @@ export default function Home() {
     <>
       <section className="space-y-6 pb-8 pt-6 md:pb-12 md:mt-10 lg:py-32">
         <div className="container flex flex-col gap-4 text-center">
-          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-balance">
-           Simply Coding: Your Gateway to a Tech Career
+          <h1 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-balance">
+            From Concept to Code: Your Project Partner for Success
           </h1>
           <p className="max-w-[42rem] mx-auto text-muted-foreground sm:text-xl text-balance">
-          From non-tech to tech career: Kickstart with simple coding and progress to advanced for a promising career shift.          
+          I'm Andrew, a dedicated software developer ready to transform your ideas  into impactful solutions.          
           </p>
           <div className="flex flex-col gap-4 justify-center sm:flex-row">
             <Link

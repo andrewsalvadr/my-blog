@@ -4,8 +4,8 @@ export const siteConfig = {
     description: "Blog and Portfolio using nextjs 14, velite, tailwind, typescript and shadcn",
     author: "Andrew Salvador",
     links: {
-        twitter: "",
-        github: "",
+        instagram: "https://www.instagram.com/andrewwwvs/",
+        github: "https://github.com/andrewsalvadr",
         personalSite: "",
     }
 };
