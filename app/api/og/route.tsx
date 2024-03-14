@@ -9,8 +9,8 @@ const interBold = fetch(
 ).then((res) => res.arrayBuffer());
 
 export async function GET(req: NextRequest) {
-  try {
-    const fontBold = await interBold;
+    try {
+      const fontBold = await interBold;
 
     const { searchParams } = req.nextUrl;
     const title = searchParams.get("title");

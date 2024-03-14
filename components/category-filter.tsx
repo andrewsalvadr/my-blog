@@ -30,7 +30,6 @@ export function CategoryFilter() {
       className="mt-4"
     >
       <option value="All">All Categories</option>
-      <option value="Career Shifter">Career Shifters</option>
       <option value="AI">AI</option>
       <option value="Coding">Coding</option>
     </select>

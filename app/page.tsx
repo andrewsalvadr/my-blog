@@ -29,6 +29,7 @@ import {
 import { FaKeyboard } from "react-icons/fa";
 import ProjectsData from "../app/Projects/projectsData";
 import IconWrapper from "@/components/ui/icon-wrapper";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About Andrew",
@@ -47,14 +48,14 @@ export default function Home() {
             From Concept to Code: Your Project Partner for Success
           </h1>
           <p className="max-w-[42rem] mx-auto text-muted-foreground sm:text-xl text-balance">
-          I'm Andrew, a dedicated software developer ready to transform your ideas  into impactful solutions.          
+          I&apos;m Andrew, a dedicated software developer ready to transform your ideas  into impactful solutions.          
           </p>
           <div className="flex flex-col gap-4 justify-center sm:flex-row">
             <Link
               href="mailto:andrewsalva88@gmail.com"
               className={cn(buttonVariants({ size: "lg" }), "w-full sm:w-fit")}
             >
-             Let's Collaborate!
+             Let&apos;s Collaborate!
             </Link>
             <Link
               href="/blog"
@@ -139,10 +140,9 @@ export default function Home() {
       </AboutFramerMotion>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {ProjectsData.map((project, index) => (
-          // Ensure each AboutFramerMotion component in the list has a unique key
           <AboutFramerMotion key={project.title + index}>
             <a href={project.link} className="block shadow-lg hover:shadow-xl transition duration-300">
-              <img src={project.image} alt={project.title} className="w-full h-60 object-cover" />
+              <Image src={project.image} alt={project.title} width={200} height={200} className="w-full h-60 object-cover" />
               <div className="p-5">
                 <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
                 <p>{project.description}</p>
@@ -153,7 +153,7 @@ export default function Home() {
       </div>
     </div>
 
-        <AboutFramerMotion>
+    <AboutFramerMotion>
       <section className="container max-w-4xl mx-auto py-6 lg:py-10 flex flex-col space-y-6 mt-60">
         <h3 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-center">
           Latest Posts
