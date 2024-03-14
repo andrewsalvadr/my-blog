@@ -8,15 +8,19 @@ interface PostItemProps {
   title: string;
   description?: string;
   date: string;
+  category: string;
 }
 
-export function PostItem({ slug, title, description, date }: PostItemProps) {
+export function PostItem({ slug, title, description, date, category }: PostItemProps) {
   return (
     <article className="flex flex-col gap-2 border-border border-b py-3">
       <div>
         <h2 className="text-2xl font-bold">
           <Link href={slug}>{title}</Link>
         </h2>
+        <p className="bg-blue-100 text-blue-700 px-2 py-1 rounded-md inline-block">
+          Category: {category}
+        </p>
       </div>
       <div className="max-w-none text-muted-foreground">{description}</div>
       <div className="flex justify-between items-center">
