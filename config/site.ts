@@ -1,7 +1,7 @@
 export const siteConfig = {
     name: "Andrew",
-    url: "https://example.com",
-    description: "Blog and Portfolio using nextjs 14, velite, tailwind, typescript and shadcn",
+    url: "https://andrew-portfolio-blog.vercel.app",
+    description: "Portfolio and Blog ",
     author: "Andrew Salvador",
     links: {
         instagram: "https://www.instagram.com/andrewwwvs/",

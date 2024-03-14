@@ -32,8 +32,8 @@ import IconWrapper from "@/components/ui/icon-wrapper";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "About Andrew",
-  description: "Information about me",
+  title: "Andrew Portfolio & Blog",
+  description: "Portfolio & Blog",
 };
 
 export default function Home() {
