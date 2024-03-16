@@ -1,0 +1,127 @@
+---
+title: Functions From Basics to advanced concepts
+description: "Fundamentals of Javascript - Functions"
+date: 2024-03-16
+published: true
+category: "Coding"
+---
+
+JavaScript functions are the building blocks of readable, maintainable, and reusable code. Functions allow you to encapsulate a piece of code and execute it whenever you want, as many times as you want.
+
+This article will guide you through the fundamentals of JavaScript functions, providing both basic and advanced insights with easy-to-understand examples. Let's dive in and unlock the power of functions in JavaScript.
+
+## What is a Function?
+
+In JavaScript, a function is a reusable block of code designed to perform a particular task. Functions are executed when they are called or invoked. This not only helps in reducing duplication of code but also in dividing a complex problem into smaller, more manageable parts.
+
+## Function Declaration
+
+```jsx
+function greet() {
+    console.log("Hello, World!");
+}
+```
+## Function Expression
+
+```jsx
+const greet = function() {
+    console.log("Hello, World!");
+};
+```
+Both examples create a function that, when called, will print `Hello, World!` to the console. The difference lies in how the JavaScript engine understands them, which we'll touch on later.
+
+## Calling a Function
+
+To execute a function, you simply call it by its name followed by parentheses.
+
+## Syntax
+
+```jsx
+greet(); // Output: Hello, World!
+```
+## Parameters and Arguments
+
+Functions can take inputs known as parameters, and when you call a function, you can pass values to these parameters, known as arguments.
+
+```jsx
+function greet(name) {
+    console.log("Hello, " + name + "!");
+}
+
+greet("Alice"); // Output: Hello, Alice!
+```
+Here, the loop will continue to run, decrementing the count by 1 each time, until count is no longer greater than 0.
+
+## Return Values
+
+Functions can return values back to the caller. If no return value is specified, a function returns undefined by default.
+
+```jsx
+function add(a, b) {
+    return a + b;
+}
+
+const sum = add(5, 3);
+console.log(sum); // Output: 8
+```
+# Advanced Concepts
+
+## Arrow Functions
+
+ES6 introduced arrow functions, offering a concise syntax for writing functions
+
+```jsx
+const greet = name => console.log(`Hello, ${name}!`);
+greet("Bob"); // Output: Hello, Bob!
+```
+Arrow functions are especially useful for short functions and when working with higher-order functions like map, filter, and reduce.
+
+## Default Parameters
+
+JavaScript allows you to specify default values for function parameters.
+
+```jsx
+function greet(name = "Guest") {
+    console.log(`Hello, ${name}!`);
+}
+
+greet(); // Output: Hello, Guest!
+greet("Anna"); // Output: Hello, Anna!
+```
+## Rest Parameters
+
+The rest parameter syntax allows you to represent an indefinite number of arguments as an array.
+
+```jsx
+function sum(...numbers) {
+    return numbers.reduce((acc, current) => acc + current, 0);
+}
+
+console.log(sum(1, 2, 3, 4)); // Output: 10
+```
+
+## Immediately Invoked Function Expressions (IIFE)
+
+An IIFE is a function that runs as soon as it is defined.
+
+```jsx
+(function() {
+    console.log("IIFE is running!");
+})(); // Output: IIFE is running!
+```
+This pattern is often used to create a private scope.
+
+## Higher-Order Functions
+
+A higher-order function is a function that takes another function as an argument or returns a function.
+
+```jsx
+const numbers = [1, 2, 3, 4, 5];
+const doubled = numbers.map(number => number * 2);
+console.log(doubled); // Output: [2, 4, 6, 8, 10]
+```
+## Conclusion
+
+Understanding functions in JavaScript is crucial for any developer, as they provide a powerful way to write flexible and maintainable code. From simple tasks to complex logic, functions can handle it all with grace. As you continue your JavaScript journey, experiment with these concepts and explore how they can solve problems in your projects. Happy coding!
+
+ -Andrew
