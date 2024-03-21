@@ -1,0 +1,97 @@
+---
+title: "Mastering JavaScript Objects"
+description: "Dot Notation, Bracket Notation, and Object Methods"
+date: 2024-03-20
+published: true
+category: "Coding"
+---
+
+Objects are collections of properties, and these properties can be values, arrays, functions, or even other objects. Understanding how to interact with objects is crucial for any JavaScript developer. This article will introduce you to JavaScript objects, including how to access their properties using dot and bracket notation, and how to define and use object methods.
+
+## Introduction to Objects
+
+In JavaScript, objects can be seen as a collection of key-value pairs. They provide a structured way to store data and represent real-world entities in your code. Here's how you can create an object:
+
+```jsx
+let person = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 30
+};
+```
+
+In this example, `person` is an object with three properties: `firstName`, `lastName`, and `age`.
+
+## Dot vs. Bracket Notation
+
+To access the properties of an object, you can use either dot notation or bracket notation. Both have their uses, but there are situations where one might be preferable over the other.
+
+## Dot Notation
+
+Dot notation is straightforward and easy to read. You simply use a dot followed by the property name to access that property's value.
+
+```jsx
+console.log(person.firstName); // Output: John
+```
+
+## Bracket Notation
+
+Bracket notation is more flexible than dot notation. It allows you to access a property using a string, which can be a variable or contain characters that aren't valid in an identifier, like spaces or dashes.
+
+```jsx
+console.log(person["lastName"]); // Output: Doe
+let property = "age";
+console.log(person[property]); // Output: 30
+```
+
+Bracket notation is particularly useful when the property name is dynamic or when it includes characters that aren't permitted in identifiers.
+
+## Object Methods
+
+Methods are functions that are stored as object properties, and they can use the this keyword to access other properties in the same object. Defining methods within an object allows you to encapsulate functionality related to that object.
+
+## Defining and Calling Methods
+
+```jsx
+let person = {
+    firstName: "John",
+    lastName: "Doe",
+    greet: function() {
+        console.log("Hello, my name is " + this.firstName + " " + this.lastName);
+    }
+};
+
+person.greet(); // Output: Hello, my name is John Doe
+```
+
+In this example, `greet` is a method of the `person` object. It uses `this.firstName` and `this.lastName` to access the object's `firstName` and `lastName` properties.
+
+## Advanced Object Techniques
+
+Adding Properties and Methods: You can add new properties and methods to an object at any time.
+
+```jsx
+person.age = 30;
+person.updateAge = function(years) {
+    this.age += years;
+};
+
+person.updateAge(1);
+console.log(person.age); // Output: 31
+```
+
+## Deleting Properties
+
+Properties can also be deleted from an object using the delete operator.
+
+```jsx
+delete person.age;
+console.log(person.age); // Output: undefined
+```
+## Conclusion
+
+JavaScript objects are powerful tools that can help you structure your code in a more logical and accessible way. By understanding how to access object properties using dot and bracket notation and how to define and utilize object methods, you can harness the full potential of JavaScript objects in your projects. Experiment with these concepts, and you'll find yourself dealing with data in JavaScript with greater ease and flexibility.
+
+Happy Coding!
+
+ -Andrew

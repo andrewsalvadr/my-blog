@@ -1,0 +1,99 @@
+---
+title: "Javascript Browser"
+description: "Understanding the DOM and Its Fundamentals"
+date: 2024-03-21
+published: true
+category: "Coding"
+---
+
+JavaScript's ability to interact with the Document Object Model `DOM` is what makes it such a powerful tool for web developers. The DOM provides a structured representation of the document as a tree of objects; JavaScript allows you to manipulate this tree, thereby changing the document's appearance, content, and behavior. This article delves into how JavaScript operates within the browser to interact with the DOM, covering the basics and providing a foundation for more advanced DOM manipulation techniques.
+
+## What is the DOM?
+
+The Document Object Model `DOM` is a programming interface for web documents. It represents the page so that programs can change the document structure, style, and content. The DOM represents the document as nodes and objects; this way, programming languages can interact with the page.
+
+A web page is a document. This document can be either displayed in the browser window or as the HTML source. But it is the same document in both cases. The DOM is an object-oriented representation of the web page, which can be modified with a scripting language like JavaScript.
+
+## Accessing the DOM Using JavaScript
+
+JavaScript can access and change all the elements of a DOM in an HTML document. To access the DOM, you use the global document object. Here are a few basic operations:
+
+## Selecting Elements
+
+JavaScript provides several methods for selecting elements. The most common include:
+
+- document.getElementById`(id)`: Selects an element by its ID.
+- document.getElementsByTagName`(name)`: Selects elements by their tag name.
+- document.getElementsByClassName`(name)`: Selects elements by their class name.
+- document.querySelector`(selector)`: Selects the first element that matches a CSS selector.
+- document.querySelectorAll`(selector)`: Selects all elements that match a CSS selector.
+
+## Example 
+
+```jsx
+let title = document.getElementById('page-title');
+let listItems = document.getElementsByTagName('li');
+let primaryButtons = document.getElementsByClassName('primary-button');
+let firstButton = document.querySelector('.button');
+let allButtons = document.querySelectorAll('.button');
+```
+
+## Manipulating the DOM
+
+Once you've selected elements, you can manipulate them. Common manipulations include changing the text content, setting attributes, and altering styles.
+
+## Changing Text Content
+
+```jsx
+document.getElementById('demo').textContent = 'Hello, World!';
+```
+
+## Setting Attributes
+
+```jsx
+document.querySelector('img').setAttribute('src', 'image.jpg');
+```
+
+## Altering Styles
+
+```jsx
+document.getElementById('demo').style.color = 'blue';
+```
+
+## Responding to User Events
+
+Interactivity in web pages is achieved by listening for user events, such as clicks, mouse movements, and keyboard inputs. JavaScript can react to these events and change the DOM accordingly.
+
+## Example: Adding a Click Event
+
+```jsx
+document.getElementById('myButton').addEventListener('click', function() {
+    alert('Button was clicked!');
+});
+```
+## Advanced DOM Manipulation
+
+Beyond basic manipulations, JavaScript allows for more complex operations like creating new elements, deleting elements, and moving elements around in the document structure.
+
+## Creating and Appending Elements
+
+```jsx
+let newElement = document.createElement('div');
+newElement.textContent = 'I am a new element.';
+document.body.appendChild(newElement);
+```
+
+## Removing Elements
+
+```jsx
+let oldElement = document.getElementById('oldElement');
+oldElement.parentNode.removeChild(oldElement);
+```
+
+## Conclusion
+
+JavaScript's integration with the DOM allows for dynamic and interactive web experiences. By understanding how to select, manipulate, and respond to events within the DOM, developers can create rich, engaging web pages and applications. This introduction to DOM manipulation with JavaScript is just the beginning; as you explore more, you'll discover a vast array of techniques and strategies to make your web pages come alive.
+
+Happy Coding!
+
+ -Andrew
