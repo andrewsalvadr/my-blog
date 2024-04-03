@@ -1,0 +1,85 @@
+---
+title: "React Fundamentals Part 1"
+description: "Component-Based Architecture"
+date: 2024-04-3
+published: true
+category: "Coding"
+---
+
+`React` has revolutionized the way we think about web development, introducing a component-based architecture that promotes reusability and modularity. This article dives into the fundamentals of React, covering everything from JSX and props to the essentials of setting up a React project. Whether you're a seasoned developer or new to the framework, understanding these core concepts is crucial for building efficient, dynamic web applications.
+
+## Component-Based Architecture
+
+React's architecture is built around components—reusable, self-contained pieces of UI that can be composed to create complex interfaces. This approach allows developers to break down the UI into manageable, testable parts, leading to cleaner and more maintainable code.
+
+## Babel: The JavaScript Compiler
+
+To make modern JavaScript and JSX syntax compatible with older browsers, React projects use Babel. `Babel` is a toolchain that primarily converts ECMAScript 2015+ code into a backward-compatible version of JavaScript. It enables developers to write their components and logic in a more readable syntax, including allowing HTML inside JavaScript through JSX.
+
+## Understanding JSX
+
+JSX stands for JavaScript XML. It allows developers to write HTML in React within JavaScript code. `JSX` combines the power of JavaScript with the familiarity of HTML, making it easier to visualize the component structure.
+
+```jsx
+const element = <h1>Hello, world!</h1>;
+```
+
+## Single ReactDOM.render
+
+In a React application, `ReactDOM.render should only be called once`. It's the starting point of the app, where the root component is attached to the DOM. Typically, this happens in index.js, targeting a single `<div>` with an id of `root` in index.html.
+
+## The Root Element
+
+Every React application has a single root DOM node. React will manage everything inside this root element, allowing the rest of your HTML document to remain unaffected by the React code.
+
+## className Instead of class
+
+In JSX, you use `className` instead of class to add CSS classes to elements. This is because class is a reserved word in JavaScript.
+
+```jsx
+const element = <div className="container"></div>;
+```
+
+## Props: Passing Data to Components
+
+`Props` short for "properties" are how you pass data from a parent component to a child component in React. They are read-only and help make components reusable and dynamic.
+
+```jsx
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+```
+
+## Destructuring Props
+
+Destructuring is a convenient way to extract multiple properties from an object directly into variables.
+
+```jsx
+function Welcome({ name, age }) {
+  return <h1>Hello, {name}. You are {age} years old.</h1>;
+}
+```
+
+This technique simplifies how you access props and improves code readability.
+
+## Immutable Props
+
+`Props are immutable`. This means once a component receives props, it cannot modify them. This immutability helps ensure predictable behavior of components and simplifies application state management.
+
+## Creating and Understanding React Projects
+
+`create-react-app` is a command-line tool that sets up the environment for a new React project. It configures the build process, sets up development tools, and optimizes the project for production.
+
+You can visit the official website on how to create `https://react.dev/`
+
+`Project Structure:` The create-react-app generates a project directory with a `public folder`, where `index.html` resides, and a `src folder`, containing `App.js`, `App.css`, and `index.js`.
+
+The `index.js` file is where the App component is rendered into the root element.
+
+## Conclusion
+
+React's component-based architecture offers a powerful, efficient way to build dynamic user interfaces. By mastering JSX, props, and the foundational setup of a React project, developers can create modular and maintainable applications. As you become more familiar with React's core concepts, you'll be well-prepared to explore more advanced topics and build sophisticated web apps. Stay tuned for more deep dives into the world of React development.
+
+Happy Coding!
+
+ -Andrew

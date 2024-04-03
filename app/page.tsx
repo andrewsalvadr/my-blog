@@ -114,6 +114,7 @@ export default function Home() {
             </p>
             <div className="flex gap-4 flex-wrap justify-center md:justify-start mt-4">
             <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-md inline-block">JavaScript</span>
+            <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-md inline-block">Typescript</span>
             <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-md inline-block">Python</span>
             <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-md inline-block">ReactJS</span>
             <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-md inline-block">NextJS</span>
