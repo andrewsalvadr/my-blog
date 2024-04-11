@@ -1,0 +1,99 @@
+---
+title: "React Fundamentals Part 3"
+description: "useState Hook: Event Handling, Styling, and More"
+date: 2024-04-11
+published: true
+category: "Coding"
+---
+
+React `useState` hook is a cornerstone of functional component state management, enabling developers to add stateful logic to their components. This article expands on the basics of useState, focusing on handling events, parameter passing, applying styles, and utilizing JSX effectively.
+
+## Basic Handling Event & Parameter Passing
+
+In React, handling events and passing parameters can be streamlined with arrow functions, which return the function rather than calling it directly. This approach is crucial for preventing functions from executing during component loading.
+
+Example: Increment and Decrement Functions:
+```jsx
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <button onClick={() => setCount(count + 1)}>Plus</button>
+      <button onClick={() => setCount(count - 1)}>Minus</button>
+    </div>
+  );
+}
+```
+
+When passing parameters in event handlers, wrapping the function call in an arrow function ensures that it's invoked only upon the event, like a button click, and not when the component mounts.
+
+## Applying External & Inline Styling
+
+React supports both external CSS files and inline styling. While external styling involves importing a .css file and using className, inline styling uses JavaScript object literals to define styles.
+
+Example: Inline Styling with Object Literals:
+```jsx
+function StyledComponent() {
+  const btnStyle = {
+    height: "70px",
+    width: "100px",
+    color: "blue",
+    fontSize: "16px",
+    fontWeight: "bold",
+  };
+
+  return <button style={btnStyle}>Click Me</button>;
+}
+```
+
+## Understanding JSX Again
+
+JSX allows HTML to be written inside JavaScript, blending the power of JavaScript with the familiarity of HTML syntax. It enhances the development experience by enabling dynamic content rendering and preventing injection attacks through value embedding before rendering.
+
+## JSX Expressions and Attributes
+
+In my `React Fundamentals Part 1` I've mentioned JSX stands for `JavaScript XML` but for further samples, You can embed any JavaScript expression in JSX by wrapping it in curly braces {}. Attributes in JSX follow camelCase convention and use className instead of class.
+
+```jsx
+const message = <h1>Hello, {name}!</h1>;
+```
+
+Inline styles in JSX are applied using object literals, providing a flexible way to style elements directly within JavaScript.
+
+```jsx
+const greetingStyle = { color: 'blue' };
+const greeting = <h1 style={greetingStyle}>Hi!</h1>;
+```
+
+## Primitive Types & Object Literals with useState()
+
+The `useState` hook can manage various data types including booleans, strings, numbers, and object literals. When dealing with objects, the setter function can update multiple state values at once, utilizing the spread operator to maintain the rest of the state.
+
+Example: Toggling a Boolean State
+
+```jsx
+function ToggleComponent() {
+  const [state, setState] = useState({
+    count: 0,
+    isActive: true,
+  });
+
+  const toggleActive = () => setState(prevState => ({ ...prevState, isActive: !prevState.isActive }));
+
+  return (
+    <div>
+      <button onClick={toggleActive}>Toggle Active State</button>
+      <p>Active: {state.isActive ? 'Yes' : 'No'}</p>
+    </div>
+  );
+}
+```
+
+## Conclusion
+
+Understanding useState and its application in event handling, styling, and JSX paves the way for building dynamic and responsive React applications. By embracing these patterns and practices, developers can harness the full potential of functional components in React, creating user interfaces that are both powerful and user-friendly. Remember, the key to mastering React lies in understanding its core concepts and applying them effectively in your projects.
+
+Happy Coding!
+
+ -Andrew
