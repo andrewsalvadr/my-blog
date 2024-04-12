@@ -1,0 +1,148 @@
+---
+title: "React Fundamentals Part 4"
+description: "Deep Dive: State Management and Lifecycle Methods"
+date: 2024-04-12
+published: true
+category: "Coding"
+---
+
+I guess this is my final react fundamentals posts for now that tackles deep into `State Management` & `Lifecycle Methods`. 
+
+So in the ecosystem of React development, `class components` play a pivotal role alongside their functional counterparts. While functional components are widely favored for their simplicity and the use of hooks, class components are indispensable due to their rich feature set, particularly in managing state and lifecycle methods. This article explores the fundamentals of class components, focusing on state management, lifecycle methods, and converting functional components into class components.
+
+## Class Components Basics
+
+Class components in React `extend` from React.Component, which provides additional features that are not available with functional components. These features include local state management and lifecycle methods that allow developers to run code at specific points in a component's life.
+
+## Creating a Class Component
+
+To define a class component, you need to extend the base Component class from React:
+```jsx
+import React, { Component } from "react";
+
+export default class App extends Component {
+    render() {
+        return <div className="App"><h1>Functional to Class</h1></div>;
+    }
+}
+```
+
+## Understanding the render() Method
+
+The `render()` method is essential in class components. It is where you define what the UI should display. It must return JSX or null and is called every time the state or props of the component change.
+
+## State Management in Class Components
+
+Class components use the state property to handle mutable data. Unlike functional components that use useState, class components declare state as an object directly in the class.
+
+## Declaring State
+
+Heres how you can initialize state in a class component:
+
+```jsx
+export default class App extends Component {
+    state = {
+        counter: 0
+    };
+
+    render() {
+        return <div className="App"><h1>{this.state.counter}</h1></div>;
+    }
+}
+```
+
+## Updating State with setState()
+
+To update state in class components, you use the `setState()` method. This method schedules an update to the components state object and tells React that this component and its children need to be re-rendered with the updated state.
+
+Basic Usage of `setState()`
+
+```jsx
+increment = () => {
+    this.setState({ counter: this.state.counter + 1 });
+};
+
+decrement = () => {
+    this.setState({ counter: this.state.counter - 1 });
+};
+```
+
+`setState()` can be called with an object as shown, or with a function if the new state computation depends on the previous state:
+
+```jsx
+this.setState((prevState) => ({
+    counter: prevState.counter + 1
+}));
+```
+
+## Component Lifecycle Methods
+
+Lifecycle methods are special methods in class components that allow execution of code at particular times in the component's life.
+
+## Key Lifecycle Methods
+
+    * Mounting: Methods like `constructor()`, `componentDidMount()`, and `render()` are called in this phase.
+    * Updating: Triggered by changes to props or state, this phase utilizes methods like `render()`, `componentDidUpdate()`, and `shouldComponentUpdate()`.
+    * Unmounting: The `componentWillUnmount()` method is used for cleanup tasks.
+
+## Purpose of Lifecycle Methods
+
+Lifecycle methods offer precise control over the execution of code based on the components lifecycle events. They are used for tasks such as initializing the state, making asynchronous requests, setting up subscriptions, and cleaning up resources.
+
+## Converting Functional Components to Class Components
+
+Lets consider converting a functional component with a counter state to a class component:
+
+## Functional Component
+
+```jsx
+import React, { useState } from 'react';
+
+function Counter() {
+    const [count, setCount] = useState(0);
+
+    return (
+        <div>
+            <h1>{count}</h1>
+            <button onClick={() => setCount(count + 1)}>Increment</button>
+            <button onClick={() => setCount(count - 1)}>Decrement</button>
+        </div>
+    );
+}
+```
+
+## Converted Class Component
+
+```jsx
+import React, { Component } from 'react';
+
+class Counter extends Component {
+    state = { count: 0 };
+
+    increment = () => {
+        this.setState({ count: this.state.count + 1 });
+    };
+
+    decrement = () => {
+        this.setState({ count: this.state.count - 1 });
+    };
+
+    render() {
+        return (
+            <div>
+                <h1>{this.state.count}</h1>
+                <button onClick={this.increment}>Increment</button>
+                <button onClick={this.decrement}>Decrement</button>
+            </div>
+        );
+    }
+}
+```
+
+## Conclusion
+
+Class components are a robust feature of React that provide comprehensive control over component behavior through state management and lifecycle methods. Understanding these concepts is essential for any React developer looking to fully leverage the framework's capabilities in building dynamic web applications. As you become comfortable with these class component techniques, you'll enhance your ability to develop more complex and efficient React applications.
+
+Happy Coding!
+
+ -Andrew
