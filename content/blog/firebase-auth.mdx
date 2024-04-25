@@ -1,0 +1,206 @@
+---
+title: "Google Firebase Authentication"
+description: "Authentication: Firebase Auth in a React App"
+date: 2024-04-25
+published: true
+category: "Solutions"
+---
+
+Firebase Authentication provides a robust, secure, and scalable authentication system that can be easily integrated into web and mobile applications, including those built with ReactJS. This service supports authentication using passwords, phone numbers, and popular federated identity providers like Google, Facebook, Twitter, and more. 
+
+This article blog post will guide you through the steps to implement Firebase Authentication in a React application, enhancing your app with a reliable and flexible authentication feature.
+
+## Overview of Firebase Authentication
+
+Firebase Authentication aims to make building secure authentication systems easy, while also improving the sign-in and onboarding experience for users. It provides backend services, easy-to-use SDKs, and ready-made UI libraries to authenticate users to your app. 
+
+It supports authentication using:
+
+    * `Email and password`.
+
+    * `Phone numbers`. 
+
+    * `Google, Facebook, Twitter, and GitHub accounts` .
+
+    * `Anonymous login`.
+
+## Setting Up the Project
+
+Before integrating Firebase Authentication into your React application, you'll need to set up a few things:
+
+ `1. Create a Firebase Project`
+
+ Go to the Firebase Console and create a new project, following the prompts provided by Firebase.
+
+ `2. Enable Authentication Methods`
+
+ In the Firebase console:
+
+* Navigate to the Authentication section.
+* Click on the `Sign-in method` tab.
+* Enable the sign-in methods that you want to offer in your application.
+
+`3. Install Firebase and Set Up Firebase Config in Your React App`
+
+```jsx
+npm install firebase
+```
+
+Create a `firebase-config.js` file in your src folder:
+
+```jsx
+import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
+
+const firebaseConfig = {
+    apiKey: "API_KEY",
+    authDomain: "PROJECT_ID.firebaseapp.com",
+    // other config variables
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+export { auth };
+```
+
+## Integrating Firebase Authentication in React
+
+`1. Creating an Authentication Context`
+
+It's a good practice to use React Context for managing authentication state. Create an AuthContext to share the user's authentication status across components.
+
+```jsx
+import React, { createContext, useContext, useEffect, useState } from 'react';
+import { auth } from './firebase-config';
+import { onAuthStateChanged } from 'firebase/auth';
+
+const AuthContext = createContext();
+
+export function useAuth() {
+    return useContext(AuthContext);
+}
+
+export const AuthProvider = ({ children }) => {
+    const [currentUser, setCurrentUser] = useState(null);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
+            setCurrentUser(user);
+            setLoading(false);
+        });
+
+        return unsubscribe;
+    }, []);
+
+    const value = {
+        currentUser
+    };
+
+    return (
+        <AuthContext.Provider value={value}>
+            {!loading && children}
+        </AuthContext.Provider>
+    );
+};
+```
+
+`2. Creating Sign-up and Login Components`
+
+Use Firebase methods to sign up and log in users in your React components.
+
+`Sign-up Component`
+
+```jsx
+import React, { useRef } from 'react';
+import { auth } from './firebase-config';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+
+function Signup() {
+    const emailRef = useRef();
+    const passwordRef = useRef();
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            await createUserWithEmailAndPassword(
+                auth,
+                emailRef.current.value,
+                passwordRef.current.value
+            );
+        } catch (error) {
+            console.error("Error signing up:", error);
+        }
+    };
+
+    return (
+        <div>
+            <form onSubmit={handleSubmit}>
+                <input ref={emailRef} type="email" required />
+                <input ref={passwordRef} type="password" required />
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    );
+}
+
+export default Signup;
+```
+
+`Login Component`
+
+```jsx
+import React, { useRef } from 'react';
+import { auth } from './firebase-config';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+
+function Login() {
+    const emailRef = useRef();
+    const passwordRef = useRef();
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            await signInWithEmailAndPassword(
+                auth,
+                emailRef.current.value,
+                passwordRef.current.value
+            );
+        } catch (error) {
+            console.error("Error logging in:", error);
+        }
+    };
+
+    return (
+        <div>
+            <form onSubmit={handleSubmit}>
+                <input ref={emailRef} type="email" required />
+                <input ref={passwordRef} type="password" required />
+                <button type="submit">Log In</button>
+            </form>
+        </div>
+    );
+}
+
+export default Login;
+```
+
+`3. Handling Authentication State`
+
+You can now use the useAuth hook to access the current user's authentication status across your application, showing or hiding elements based on whether the user is logged in.
+
+## Conclusion
+
+Firebase Authentication provides a powerful and easy-to-implement solution for managing users in your React application. By following the steps outlined above, you can integrate Firebase Authentication to manage user sessions securely and efficiently. This setup not only simplifies the development of your application but also enhances the security and functionality of your user management system.
+
+Here are the document link for authentication guide:
+
+* `Firebase Authentication`: https://firebase.google.com/docs/auth
+
+Happy Coding!
+
+ -Andrew
