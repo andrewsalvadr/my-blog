@@ -76,7 +76,6 @@ export default function Home() {
         <IconWrapper>
         <div className="container max-w-7xl mx-auto py-8 lg:py-10 flex justify-center items-center gap-8 flex-wrap">
           <SiJavascript style={{ color: "var(--icon-color)" }} className="text-4xl" title="JavaScript" />
-          <SiPython style={{ color: "var(--icon-color)" }} className="text-4xl" title="Python" />
           <SiReact style={{ color: "var(--icon-color)" }} className="text-4xl" title="ReactJS" />
           <SiNextdotjs style={{ color: "var(--icon-color)" }} className="text-4xl" title="NextJS" />
           <SiFirebase style={{ color: "var(--icon-color)" }} className="text-4xl" title="Firebase" />
@@ -86,6 +85,7 @@ export default function Home() {
           <SiSendinblue style={{ color: "var(--icon-color)" }} className="text-4xl" title="Sendinblue" />
           <SiStripe style={{ color: "var(--icon-color)" }} className="text-4xl" title="Stripe" />
           <SiPostgresql style={{ color: "var(--icon-color)" }} className="text-4xl" title="PostgreSQL" />
+          <SiBetter-sqlite3 style={{ color: "var(--icon-color)" }} className="text-4xl" title="Better-sqlite3" />
           <SiCss3 style={{ color: "var(--icon-color)" }} className="text-4xl" title="CSS3" />
           <SiMaterialdesign style={{ color: "var(--icon-color)" }} className="text-4xl" title="Material UI" />
           <SiTailwindcss style={{ color: "var(--icon-color)" }} className="text-4xl" title="Tailwind" />
@@ -110,7 +110,7 @@ export default function Home() {
           </div>
           <div className="text-lg text-muted-foreground">
             <p>
-              A passionate software developer with two years of professional experience, dedicated to turning code into high-quality solutions. With a knack for working independently and a commitment to excellence, aiming to drive your business goals to new heights.
+              A passionate software developer with four years of professional experience, dedicated to turning code into high-quality solutions. With a knack for working independently and a commitment to excellence, aiming to drive your business goals to new heights.
             </p>
             <div className="flex gap-4 flex-wrap justify-center md:justify-start mt-4">
             <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-md inline-block">JavaScript</span>

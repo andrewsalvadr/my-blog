@@ -33,7 +33,7 @@ export default async function AboutPage() {
         </div>
         <div className="text-muted-foreground text-lg py-4">
           <p className="mb-5">
-          I&apos;m Andrew Salvador, a software developer with two years of experience in crafting impactful digital solutions. Initially specializing in front-end development, my journey in technology has been driven by a profound passion for innovation and a relentless pursuit of excellence.</p>
+          I&apos;m Andrew Salvador, a software developer with four years of experience in crafting impactful digital solutions. Initially specializing in front-end development, my journey in technology has been driven by a profound passion for innovation and a relentless pursuit of excellence.</p>
           <p>
             Currently expanding my expertise to include back-end systems, mastering tools like Google Firebase, Express, PostgreSQL and others to build robust and scalable applications.
           </p>
