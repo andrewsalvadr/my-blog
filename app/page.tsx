@@ -9,7 +9,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Metadata } from "next";
 import { 
   SiJavascript, 
-  SiPython, 
+  SiSqlite, 
   SiReact, 
   SiNextdotjs, 
   SiFirebase, 
@@ -85,7 +85,7 @@ export default function Home() {
           <SiSendinblue style={{ color: "var(--icon-color)" }} className="text-4xl" title="Sendinblue" />
           <SiStripe style={{ color: "var(--icon-color)" }} className="text-4xl" title="Stripe" />
           <SiPostgresql style={{ color: "var(--icon-color)" }} className="text-4xl" title="PostgreSQL" />
-          <SiBetter-sqlite3 style={{ color: "var(--icon-color)" }} className="text-4xl" title="Better-sqlite3" />
+          <SiSqlite style={{ color: "var(--icon-color)" }} className="text-4xl" title="SQLite" />
           <SiCss3 style={{ color: "var(--icon-color)" }} className="text-4xl" title="CSS3" />
           <SiMaterialdesign style={{ color: "var(--icon-color)" }} className="text-4xl" title="Material UI" />
           <SiTailwindcss style={{ color: "var(--icon-color)" }} className="text-4xl" title="Tailwind" />
