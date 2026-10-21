@@ -114,14 +114,13 @@ export default function Home() {
             </p>
             <div className="flex gap-4 flex-wrap justify-center md:justify-start mt-4">
             <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-md inline-block">JavaScript</span>
-            <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-md inline-block">Typescript</span>
-            <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-md inline-block">Python</span>
             <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-md inline-block">ReactJS</span>
             <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-md inline-block">NextJS</span>
             <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-md inline-block">Google Firebase</span>
             <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-md inline-block">Express</span>
             <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-md inline-block">NodeJs</span>
             <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-md inline-block">PostgresSql</span>
+            <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-md inline-block">better-sqlite3</span>
             <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-md inline-block">CSS3</span>
             <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-md inline-block">Material UI</span>
             <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-md inline-block">Tailwind</span>
